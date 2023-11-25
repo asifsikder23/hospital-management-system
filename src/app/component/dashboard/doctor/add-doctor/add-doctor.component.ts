@@ -19,7 +19,6 @@ export class AddDoctorComponent implements OnInit {
   qualification!: string;
   id!: string;
   buttonName!: string;
-
   departments: string[] = [
     'Orthopedics',
     'Cardiology',
@@ -83,7 +82,7 @@ export class AddDoctorComponent implements OnInit {
         this.mobile,
         [
           Validators.required,
-          Validators.maxLength(10),
+          Validators.maxLength(11),
           Validators.minLength(10),
         ],
       ],
@@ -93,5 +92,12 @@ export class AddDoctorComponent implements OnInit {
       birthdate: [this.birthdate, [Validators.required]],
       qualification: [this.qualification, [Validators.required]],
     });
+  }
+  cancelRegistration() {
+    this.dialogRef.close();
+  }
+
+  registerDoctor() {
+    this.dialogRef.close(this.form.value);
   }
 }

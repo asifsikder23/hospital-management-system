@@ -9,22 +9,35 @@ import { MaterialModule } from './material/material/material.module';
 import { PatientComponent } from './component/dashboard/patient/patient.component';
 import { SidebarComponent } from './component/dashboard/sidebar/sidebar.component';
 import { DoctorComponent } from './component/dashboard/doctor/doctor.component';
-import { environment } from 'src/environments/environment.development';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AddDoctorComponent } from './component/dashboard/doctor/add-doctor/add-doctor.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, PatientComponent, SidebarComponent, DoctorComponent, AddDoctorComponent],
+  declarations: [
+    AppComponent,
+    PatientComponent,
+    SidebarComponent,
+    DoctorComponent,
+    AddDoctorComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyDqS1NBxyb5NQ462FnAWdgUfLRKpMHIQU4',
+      authDomain: 'hospital-management-system23.firebaseapp.com',
+      projectId: 'hospital-management-system23',
+      storageBucket: 'hospital-management-system23.appspot.com',
+      messagingSenderId: '585382712676',
+      appId: '1:585382712676:web:0b96bfa7d5cc5c4c0d9671',
+    }),
     MaterialModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
