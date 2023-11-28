@@ -10,4 +10,7 @@ export class DataService {
     doctor.id = this.afs.createId();
     return this.afs.collection('Doctor/').add(doctor);
   }
+  getAllDoctors(){
+    return this.afs.collection('Doctor/').snapshotChanges();
+  }
 }
